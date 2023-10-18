@@ -1,6 +1,5 @@
-package com.example.inventory.utils;
+package com.example.transaction.utils;
 
-import com.example.inventory.entity.Transaction;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

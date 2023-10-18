@@ -1,20 +1,20 @@
-package com.example.inventory.model;
+package com.example.transaction.entity;
 
-import com.example.inventory.entity.TransactionStatus;
-import com.example.inventory.entity.TransactionType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class TransactionEvent {
-
+public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long accountNo;
+    private Long fromAccount;
+    private Long toAccount;
     private Double amount;
     @Enumerated(EnumType.STRING)
     private TransactionStatus status;

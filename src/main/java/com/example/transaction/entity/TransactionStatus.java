@@ -1,4 +1,4 @@
-package com.example.inventory.entity;
+package com.example.transaction.entity;
 
 public enum TransactionStatus {
     FAILED,

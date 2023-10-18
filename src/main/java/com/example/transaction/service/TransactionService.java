@@ -1,12 +1,12 @@
-package com.example.inventory.service;
+package com.example.transaction.service;
 
-import com.example.inventory.client.AccountTransactionClient;
-import com.example.inventory.entity.Transaction;
-import com.example.inventory.entity.TransactionStatus;
-import com.example.inventory.entity.TransactionType;
-import com.example.inventory.repository.TransactionRepository;
-import com.example.inventory.utils.MessageSender;
-import com.example.inventory.utils.UtilityMapper;
+import com.example.transaction.client.AccountTransactionClient;
+import com.example.transaction.entity.Transaction;
+import com.example.transaction.entity.TransactionStatus;
+import com.example.transaction.entity.TransactionType;
+import com.example.transaction.repository.TransactionRepository;
+import com.example.transaction.utils.MessageSender;
+import com.example.transaction.utils.UtilityMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

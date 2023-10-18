@@ -1,8 +1,8 @@
-package com.example.inventory.utils;
+package com.example.transaction.utils;
 
-import com.example.inventory.entity.Transaction;
-import com.example.inventory.entity.TransactionType;
-import com.example.inventory.model.TransactionEvent;
+import com.example.transaction.entity.Transaction;
+import com.example.transaction.entity.TransactionType;
+import com.example.transaction.model.TransactionEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

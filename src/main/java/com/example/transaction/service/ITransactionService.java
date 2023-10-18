@@ -1,6 +1,6 @@
-package com.example.inventory.service;
+package com.example.transaction.service;
 
-import com.example.inventory.entity.Transaction;
+import com.example.transaction.entity.Transaction;
 
 public interface ITransactionService {
 

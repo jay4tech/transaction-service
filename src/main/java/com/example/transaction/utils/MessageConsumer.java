@@ -1,7 +1,6 @@
-package com.example.inventory.utils;
+package com.example.transaction.utils;
 
-import com.example.inventory.entity.Transaction;
-import com.example.inventory.service.ITransactionService;
+import com.example.transaction.service.ITransactionService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;

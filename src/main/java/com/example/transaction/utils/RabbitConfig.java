@@ -1,4 +1,4 @@
-package com.example.inventory.utils;
+package com.example.transaction.utils;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Qualifier;

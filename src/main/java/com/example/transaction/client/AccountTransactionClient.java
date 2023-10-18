@@ -1,6 +1,6 @@
-package com.example.inventory.client;
+package com.example.transaction.client;
 
-import com.example.inventory.model.TransactionEvent;
+import com.example.transaction.model.TransactionEvent;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
