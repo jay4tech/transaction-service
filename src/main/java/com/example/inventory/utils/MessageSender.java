@@ -1,5 +1,6 @@
 package com.example.inventory.utils;
 
+import com.example.inventory.entity.Transaction;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,20 @@ public class MessageSender {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    @Autowired
-    @Qualifier("queuePayment")
-    private Queue queuePayment;
 
-    public void sendPaymentEvent(String message) {
-        rabbitTemplate.convertAndSend(queuePayment.getName(), message);
+    @Autowired
+    @Qualifier("queueDebitCredit")
+    private Queue queueDebitCredit;
+
+    @Autowired
+    @Qualifier("queueReverseDebit")
+    private Queue queueReverseDebit;
+
+    public void sendDebitCreditDetails(String message) {
+        rabbitTemplate.convertAndSend(queueDebitCredit.getName(), message);
+    }
+
+    public void sendToReverseDebit(String message) {
+        rabbitTemplate.convertAndSend(queueReverseDebit.getName(), message);
     }
 }

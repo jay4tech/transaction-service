@@ -4,4 +4,5 @@ import com.example.inventory.entity.Transaction;
 
 public interface ITransactionService {
 
+    Transaction initiateTransaction(Transaction transaction);
 }

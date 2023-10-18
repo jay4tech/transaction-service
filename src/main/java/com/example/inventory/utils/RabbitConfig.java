@@ -1,6 +1,7 @@
 package com.example.inventory.utils;
 
 import org.springframework.amqp.core.Queue;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,20 +9,23 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
 
-    @Value("${queue.name.inventory}")
-    private String queueInventory;
+    @Value("${queue.name.debitCredit}")
+    private String queueNameDebitCredit;
 
-    @Bean(name = "queueInventory")
-    public Queue queue() {
-        return new Queue(queueInventory, true);
+    @Bean(name = "queueDebitCredit")
+    public Queue queueDebitCredit() {
+        return new Queue(queueNameDebitCredit, true);
     }
 
-    @Value("${queue.name.payment}")
-    private String queuePayment;
 
-    @Bean
-    public Queue queuePayment() {
-        return new Queue(queuePayment, true);
+    @Qualifier("${queue.name.reverseDebit}")
+    private String queueNameReverseDebit;
+
+    @Bean(name = "queueReverseDebit")
+    public Queue queueReverseDebit() {
+        return new Queue(queueNameReverseDebit, true);
     }
+
+
 
 }

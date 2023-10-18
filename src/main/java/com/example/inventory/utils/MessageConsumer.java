@@ -16,16 +16,11 @@ public class MessageConsumer {
     @Autowired
     MessageSender messageSender;
 
-    @RabbitListener(queues = {"${queue.name.inventory}"})
+    @RabbitListener(queues = {"${queue.name.debitCredit}"})
     public void receive(@Payload String message) {
         try {
             System.out.println("Message " + message);
-            Order orderDetails = UtilityMapper.responseToModel(message);
-            Transaction inventory = inventoryService.getInventoryByProductId(orderDetails.getProductId());
-            assert orderDetails != null;
-            inventory.setQuantity(inventory.getQuantity() - orderDetails.getQuantity());
-            inventoryService.createtUpdateInventory(inventory);
-            messageSender.sendPaymentEvent(UtilityMapper.getJsonString(orderDetails));
+//            Order orderDetails = UtilityMapper.responseToModel(message);
         } catch (Exception e) {
             e.printStackTrace();
         }
