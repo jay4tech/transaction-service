@@ -18,7 +18,7 @@ public class RabbitConfig {
     }
 
 
-    @Qualifier("${queue.name.reverseDebit}")
+    @Value("${queue.name.reverseDebit}")
     private String queueNameReverseDebit;
 
     @Bean(name = "queueReverseDebit")
